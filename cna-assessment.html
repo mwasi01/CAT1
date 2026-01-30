@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twins Medcare Training Institute - CNAs CAT Questions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9fc;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2c8c99;
+        }
+        
+        h1 {
+            color: #2c8c99;
+            margin-bottom: 10px;
+        }
+        
+        .institute-name {
+            font-size: 1.4rem;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        .instructions {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2c8c99;
+        }
+        
+        .instructions h3 {
+            color: #2c8c99;
+            margin-bottom: 8px;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 5px;
+        }
+        
+        .student-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .info-group {
+            margin-bottom: 15px;
+        }
+        
+        .info-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        .info-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .questions-container {
+            margin-bottom: 40px;
+        }
+        
+        .question-block {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #ddd;
+            transition: all 0.3s;
+        }
+        
+        .question-block:hover {
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .question-number {
+            display: inline-block;
+            background-color: #2c8c99;
+            color: white;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+            width: calc(100% - 40px);
+            vertical-align: top;
+        }
+        
+        .options {
+            margin-left: 40px;
+        }
+        
+        .option {
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+        
+        .option label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .option input {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        button {
+            padding: 12px 30px;
+            background-color: #2c8c99;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #23707c;
+        }
+        
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        #submitBtn {
+            background-color: #28a745;
+        }
+        
+        #submitBtn:hover {
+            background-color: #218838;
+        }
+        
+        .results-container {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .score-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c8c99;
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: #2c8c99;
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+        
+        .email-form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .email-form h3 {
+            margin-bottom: 15px;
+            color: #2c8c99;
+        }
+        
+        .loading {
+            display: none;
+            margin: 20px 0;
+            color: #2c8c99;
+        }
+        
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .error-message {
+            display: none;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .question-counter {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .student-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .actions {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CNAs Online CAT Assessment</h1>
+            <div class="institute-name">Twins Medcare Training Institute</div>
+            <p>Comprehensive Assessment Test for Certified Nursing Assistants</p>
+        </header>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ul>
+                <li>This test contains 60 multiple-choice questions.</li>
+                <li>Select the most appropriate answer for each question.</li>
+                <li>All questions must be answered before submission.</li>
+                <li>You can navigate through questions using the "Previous" and "Next" buttons.</li>
+                <li>Once completed, click "Submit Assessment" to see your score and send results.</li>
+                <li>Results will be sent to the instructor automatically.</li>
+            </ul>
+        </div>
+        
+        <form id="studentForm" class="student-info">
+            <div class="info-group">
+                <label for="studentName">Full Name:</label>
+                <input type="text" id="studentName" name="studentName" required>
+            </div>
+            <div class="info-group">
+                <label for="studentEmail">Email Address:</label>
+                <input type="email" id="studentEmail" name="studentEmail" required>
+            </div>
+            <div class="info-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" required>
+            </div>
+            <div class="info-group">
+                <label for="courseDate">Course Date:</label>
+                <input type="date" id="courseDate" name="courseDate" required>
+            </div>
+        </form>
+        
+        <div class="question-counter">Question <span id="currentQuestion">1</span> of 60</div>
+        
+        <div class="questions-container" id="questionsContainer">
+            <!-- Questions will be dynamically inserted here -->
+        </div>
+        
+        <div class="actions">
+            <button type="button" id="prevBtn" onclick="changeQuestion(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="changeQuestion(1)">Next</button>
+            <button type="button" id="submitBtn" onclick="submitAssessment()">Submit Assessment</button>
+        </div>
+        
+        <div class="results-container" id="resultsContainer">
+            <h2>Assessment Results</h2>
+            <p id="studentResultInfo"></p>
+            
+            <div class="score-display">
+                Score: <span id="score">0</span>/60 (<span id="percentage">0</span>%)
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <p id="performanceText"></p>
+            
+            <div class="email-form">
+                <h3>Results Submission</h3>
+                <p>Your results will be automatically sent to the instructor. Click the button below to confirm submission.</p>
+                <button type="button" id="sendEmailBtn" onclick="sendResultsToEmail()">Send Results to Instructor</button>
+                <div class="loading" id="emailLoading">Sending results... Please wait.</div>
+                <div class="success-message" id="emailSuccess">Results successfully sent to instructor!</div>
+                <div class="error-message" id="emailError">There was an error sending results. Please try again.</div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Twins Medcare Training Institute &copy; <span id="currentYear"></span> | CNAs Assessment Test</p>
+            <p>This assessment is for training purposes only.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Initialize questions array
+        const questions = [
+            // 1-10: Basic Nursing Concepts
+            {
+                question: "What is the primary role of a Certified Nursing Assistant (CNA)?",
+                options: [
+                    "A. Diagnosing patient conditions",
+                    "B. Administering medications",
+                    "C. Providing basic patient care under supervision",
+                    "D. Performing surgical procedures"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Which of the following vital signs is typically measured first?",
+                options: [
+                    "A. Blood pressure",
+                    "B. Temperature",
+                    "C. Pulse",
+                    "D. Respiratory rate"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the normal range for adult blood pressure?",
+                options: [
+                    "A. 90/60 to 120/80 mmHg",
+                    "B. 100/70 to 130/90 mmHg",
+                    "C. 110/80 to 140/90 mmHg",
+                    "D. 120/80 to 140/90 mmHg"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "When should hand hygiene be performed by healthcare workers?",
+                options: [
+                    "A. Before and after patient contact",
+                    "B. Only after patient contact",
+                    "C. Only when hands are visibly soiled",
+                    "D. At the beginning and end of each shift"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Which position is recommended for a patient with difficulty breathing?",
+                options: [
+                    "A. Supine",
+                    "B. Fowler's position",
+                    "C. Sims' position",
+                    "D. Trendelenburg"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the most effective way to prevent the spread of infection?",
+                options: [
+                    "A. Wearing gloves at all times",
+                    "B. Proper hand hygiene",
+                    "C. Using antimicrobial soap",
+                    "D. Isolating all patients"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "How often should a bedridden patient be repositioned to prevent pressure ulcers?",
+                options: [
+                    "A. Every 30 minutes",
+                    "B. Every 1-2 hours",
+                    "C. Every 4 hours",
+                    "D. Every 8 hours"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Which of the following is a sign of hypoxia?",
+                options: [
+                    "A. Pink skin color",
+                    "B. Slow, regular breathing",
+                    "C. Cyanosis (bluish discoloration)",
+                    "D. Increased alertness"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is the correct order for putting on PPE (Personal Protective Equipment)?",
+                options: [
+                    "A. Gloves, gown, mask, goggles",
+                    "B. Gown, mask, goggles, gloves",
+                    "C. Mask, goggles, gown, gloves",
+                    "D. Goggles, mask, gloves, gown"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "When measuring a patient's radial pulse, how long should you count?",
+                options: [
+                    "A. 15 seconds and multiply by 4",
+                    "B. 30 seconds and multiply by 2",
+                    "C. 60 seconds for accuracy",
+                    "D. Either A or B is acceptable"
+                ],
+                correctAnswer: 3
+            },
+            // 11-20: Patient Care Skills
+            {
+                question: "When assisting a patient with oral care who is unconscious, which position is safest?",
+                options: [
+                    "A. Supine position",
+                    "B. Fowler's position",
+                    "C. Side-lying position",
+                    "D. Prone position"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "How should you properly lift a heavy object?",
+                options: [
+                    "A. Bend at the waist and keep legs straight",
+                    "B. Bend your knees and keep your back straight",
+                    "C. Twist your torso while lifting",
+                    "D. Use a jerking motion to lift quickly"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What temperature should bath water be for a bed bath?",
+                options: [
+                    "A. 90-95°F (32-35°C)",
+                    "B. 100-105°F (38-41°C)",
+                    "C. 110-115°F (43-46°C)",
+                    "D. 120-125°F (49-52°C)"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "When making an occupied bed, the CNA should:",
+                options: [
+                    "A. Roll the patient away from them",
+                    "B. Roll the patient toward them",
+                    "C. Have the patient stand beside the bed",
+                    "D. Ask another CNA to hold the patient"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Which of the following is NOT a sign of proper body alignment?",
+                options: [
+                    "A. Head in line with spine",
+                    "B. Shoulders rounded forward",
+                    "C. Hips and knees slightly flexed",
+                    "D. Feet supported"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "When transferring a patient from bed to wheelchair, where should the wheelchair be placed?",
+                options: [
+                    "A. At the foot of the bed",
+                    "B. On the patient's strong side",
+                    "C. On the patient's weak side",
+                    "D. At a 45-degree angle to the bed"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the primary purpose of performing range of motion exercises?",
+                options: [
+                    "A. To build muscle strength",
+                    "B. To maintain joint mobility",
+                    "C. To improve cardiovascular health",
+                    "D. To aid digestion"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "When measuring urine output, 1 milliliter is equal to:",
+                options: [
+                    "A. 1 cubic centimeter (cc)",
+                    "B. 10 cubic centimeters (cc)",
+                    "C. 100 cubic centimeters (cc)",
+                    "D. 1000 cubic centimeters (cc)"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Which food item is typically allowed on a clear liquid diet?",
+                options: [
+                    "A. Milk",
+                    "B. Apple juice",
+                    "C. Mashed potatoes",
+                    "D. Gelatin"
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "When feeding a patient, the CNA should:",
+                options: [
+                    "A. Feed the patient as quickly as possible",
+                    "B. Offer small bites and allow time to chew",
+                    "C. Mix all foods together for efficiency",
+                    "D. Feed only when the patient requests"
+                ],
+                correctAnswer: 1
+            },
+            // 21-30: Safety and Emergency Procedures
+            {
+                question: "What does the acronym RACE stand for in fire safety?",
+                options: [
+                    "A. Run, Alert, Contain, Evacuate",
+                    "B. Remove, Alarm, Confine, Extinguish",
+                    "C. Rescue, Alarm, Contain, Evacuate",
+                    "D. Rescue, Alert, Call, Escape"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "When a patient falls, the first action of the CNA should be to:",
+                options: [
+                    "A. Call for help immediately",
+                    "B. Assist the patient to stand quickly",
+                    "C. Assess the patient's condition",
+                    "D. Document the incident"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Which of the following is a sign of a stroke?",
+                options: [
+                    "A. Sudden severe headache",
+                    "B. Facial drooping on one side",
+                    "C. Difficulty speaking",
+                    "D. All of the above"
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "What is the first step in CPR for an adult?",
+                options: [
+                    "A. Begin chest compressions",
+                    "B. Open the airway",
+                    "C. Check for responsiveness",
+                    "D. Give two rescue breaths"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "When using a fire extinguisher, remember the acronym PASS, which stands for:",
+                options: [
+                    "A. Pull, Aim, Squeeze, Sweep",
+                    "B. Push, Alert, Spray, Stop",
+                    "C. Point, Activate, Spray, Sweep",
+                    "D. Pull, Alert, Spray, Stop"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "A patient is having a seizure. What should the CNA do first?",
+                options: [
+                    "A. Restrain the patient to prevent injury",
+                    "B. Place a tongue depressor in the mouth",
+                    "C. Protect the patient from injury",
+                    "D. Give the patient water"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is the correct compression-to-breath ratio for adult CPR?",
+                options: [
+                    "A. 5 compressions to 1 breath",
+                    "B. 15 compressions to 2 breaths",
+                    "C. 30 compressions to 2 breaths",
+                    "D. 50 compressions to 5 breaths"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Which patient should be placed in isolation precautions?",
+                options: [
+                    "A. A patient with a broken leg",
+                    "B. A patient with tuberculosis",
+                    "C. A patient with hypertension",
+                    "D. A patient with diabetes"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the most common cause of choking in adults?",
+                options: [
+                    "A. Small toys",
+                    "B. Food",
+                    "C. Dental appliances",
+                    "D. Medications"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "When should incident reports be completed?",
+                options: [
+                    "A. At the end of each shift",
+                    "B. Only for serious incidents",
+                    "C. As soon as possible after an incident",
+                    "D. At the end of the week"
+                ],
+                correctAnswer: 2
+            },
+            // 31-40: Communication and Ethics
+            {
+                question: "Which of the following demonstrates active listening?",
+                options: [
+                    "A. Finishing the patient's sentences",
+                    "B. Maintaining eye contact and nodding",
+                    "C. Looking at your watch frequently",
+                    "D. Interrupting to ask questions"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is an example of nonverbal communication?",
+                options: [
+                    "A. Speaking clearly",
+                    "B. Writing a note",
+                    "C. Facial expressions",
+                    "D. Using medical terminology"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Which of the following is a patient's right?",
+                options: [
+                    "A. The right to know staff salaries",
+                    "B. The right to confidentiality",
+                    "C. The right to choose their medications",
+                    "D. The right to unlimited visitors"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "When is it appropriate to share patient information?",
+                options: [
+                    "A. With family members who ask",
+                    "B. With other healthcare team members involved in care",
+                    "C. With friends who are curious",
+                    "D. On social media if names are not mentioned"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What should a CNA do if a patient refuses care?",
+                options: [
+                    "A. Force the care anyway",
+                    "B. Document the refusal and notify the nurse",
+                    "C. Scold the patient for being uncooperative",
+                    "D. Skip that part of care and move on"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Which of the following is considered a barrier to communication?",
+                options: [
+                    "A. Using simple language",
+                    "B. Speaking too quickly",
+                    "C. Facing the patient when speaking",
+                    "D. Asking open-ended questions"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the purpose of informed consent?",
+                options: [
+                    "A. To protect the healthcare facility from lawsuits",
+                    "B. To ensure the patient understands procedures and agrees",
+                    "C. To document that care was provided",
+                    "D. To satisfy insurance requirements"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "A CNA witnesses another staff member mistreating a patient. What should they do?",
+                options: [
+                    "A. Confront the staff member immediately",
+                    "B. Report it to the supervisor or nurse",
+                    "C. Discuss it with other coworkers",
+                    "D. Ignore it if it's not severe"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Which statement shows empathy?",
+                options: [
+                    "A. 'I know exactly how you feel.'",
+                    "B. 'You shouldn't feel that way.'",
+                    "C. 'This must be difficult for you.'",
+                    "D. 'At least it's not worse.'"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is the best approach when caring for a patient with dementia?",
+                options: [
+                    "A. Correct them when they're confused",
+                    "B. Use simple instructions and maintain routine",
+                    "C. Ask multiple questions at once",
+                    "D. Restrict their movements for safety"
+                ],
+                correctAnswer: 1
+            },
+            // 41-50: Special Patient Care
+            {
+                question: "When caring for a diabetic patient, which sign might indicate hypoglycemia?",
+                options: [
+                    "A. Flushed, dry skin",
+                    "B. Slow, deep breathing",
+                    "C. Confusion and sweating",
+                    "D. Increased thirst and urination"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "How should a CNA care for a patient with a urinary catheter?",
+                options: [
+                    "A. Keep the drainage bag above bladder level",
+                    "B. Secure the catheter tubing to the patient's leg",
+                    "C. Disconnect the catheter frequently for cleaning",
+                    "D. Clamp the tubing when transferring the patient"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is a common complication of immobility?",
+                options: [
+                    "A. Hypertension",
+                    "B. Pressure ulcers",
+                    "C. Diarrhea",
+                    "D. Increased appetite"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "When caring for a patient with COPD, which position is most helpful?",
+                options: [
+                    "A. Supine with legs elevated",
+                    "B. Sitting upright and leaning forward",
+                    "C. Prone position",
+                    "D. Trendelenburg position"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Which intervention is most effective for preventing constipation in bedridden patients?",
+                options: [
+                    "A. Increasing fluid intake and fiber if allowed",
+                    "B. Administering enemas daily",
+                    "C. Restricting food intake",
+                    "D. Encouraging bed rest"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "What should be done first when finding a patient on the floor?",
+                options: [
+                    "A. Help them up immediately",
+                    "B. Ask what happened",
+                    "C. Check for responsiveness and injuries",
+                    "D. Call the family"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "When providing perineal care for a female patient, you should wipe:",
+                options: [
+                    "A. Back to front",
+                    "B. In a circular motion",
+                    "C. Front to back",
+                    "D. Side to side"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is the purpose of TED hose (anti-embolism stockings)?",
+                options: [
+                    "A. To keep feet warm",
+                    "B. To prevent blood clots",
+                    "C. To reduce swelling from heart failure",
+                    "D. To prevent pressure ulcers"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "A patient with dysphagia has difficulty with:",
+                options: [
+                    "A. Breathing",
+                    "B. Swallowing",
+                    "C. Hearing",
+                    "D. Seeing"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the best way to communicate with a hearing-impaired patient?",
+                options: [
+                    "A. Speak louder and shout if necessary",
+                    "B. Face the patient and speak clearly",
+                    "C. Use complex medical terminology",
+                    "D. Write everything down"
+                ],
+                correctAnswer: 1
+            },
+            // 51-60: Documentation and Professionalism
+            {
+                question: "When documenting patient care, which is the most important principle?",
+                options: [
+                    "A. Use medical abbreviations to save time",
+                    "B. Document only abnormal findings",
+                    "C. Document accurately and objectively",
+                    "D. Wait until end of shift to document everything"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What does SOAP documentation stand for?",
+                options: [
+                    "A. Symptoms, Observations, Assessment, Plan",
+                    "B. Subjective, Objective, Assessment, Plan",
+                    "C. Situation, Observation, Action, Plan",
+                    "D. Signs, Observations, Assessment, Progress"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Which of the following is an objective observation?",
+                options: [
+                    "A. 'Patient states he has pain'",
+                    "B. 'Patient appears anxious'",
+                    "C. 'Patient's blood pressure is 120/80'",
+                    "D. 'Patient seems tired'"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "A CNA can legally:",
+                options: [
+                    "A. Diagnose medical conditions",
+                    "B. Administer oral medications",
+                    "C. Perform sterile procedures",
+                    "D. Take vital signs"
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "What is the most important reason for proper documentation?",
+                options: [
+                    "A. To protect against legal issues",
+                    "B. To ensure continuity of care",
+                    "C. To satisfy insurance requirements",
+                    "D. To demonstrate thoroughness"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Which behavior demonstrates professional boundaries?",
+                options: [
+                    "A. Accepting gifts from patients",
+                    "B. Sharing personal problems with patients",
+                    "C. Maintaining a therapeutic relationship",
+                    "D. Socializing with patients outside work"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "If a CNA makes an error in documentation, they should:",
+                options: [
+                    "A. Erase or white-out the error",
+                    "B. Draw a single line through it, initial, and date",
+                    "C. Tear out the page and start over",
+                    "D. Ignore it and continue writing"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Continuing education for CNAs is important because:",
+                options: [
+                    "A. It is required for license renewal",
+                    "B. Healthcare knowledge and practices change",
+                    "C. It increases salary potential",
+                    "D. Both A and B"
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "What should a CNA do if they don't know how to perform a task?",
+                options: [
+                    "A. Try to figure it out on their own",
+                    "B. Ask a fellow CNA for help",
+                    "C. Ask the nurse for instruction",
+                    "D. Skip the task"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Which of the following is NOT a professional responsibility of a CNA?",
+                options: [
+                    "A. Maintaining patient confidentiality",
+                    "B. Reporting changes in patient condition",
+                    "C. Prescribing medications",
+                    "D. Providing basic patient care"
+                ],
+                correctAnswer: 2
+            }
+        ];
+        
+        // Current question index
+        let currentQuestionIndex = 0;
+        let userAnswers = new Array(questions.length).fill(null);
+        
+        // Initialize the questions on the page
+        function initializeQuestions() {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+            
+            questions.forEach((q, index) => {
+                const questionBlock = document.createElement('div');
+                questionBlock.className = 'question-block';
+                questionBlock.id = `question-${index}`;
+                questionBlock.style.display = index === 0 ? 'block' : 'none';
+                
+                const questionNumber = document.createElement('span');
+                questionNumber.className = 'question-number';
+                questionNumber.textContent = index + 1;
+                
+                const questionText = document.createElement('div');
+                questionText.className = 'question-text';
+                questionText.textContent = q.question;
+                
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'options';
+                
+                q.options.forEach((option, optionIndex) => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.className = 'option';
+                    
+                    const input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = `question-${index}`;
+                    input.value = optionIndex;
+                    input.id = `q${index}-option${optionIndex}`;
+                    input.onclick = () => {
+                        userAnswers[index] = optionIndex;
+                        updateNavigationButtons();
+                    };
+                    
+                    // Check if user already answered this question
+                    if (userAnswers[index] === optionIndex) {
+                        input.checked = true;
+                    }
+                    
+                    const label = document.createElement('label');
+                    label.htmlFor = input.id;
+                    label.textContent = option;
+                    
+                    optionDiv.appendChild(input);
+                    optionDiv.appendChild(label);
+                    optionsDiv.appendChild(optionDiv);
+                });
+                
+                questionBlock.appendChild(questionNumber);
+                questionBlock.appendChild(questionText);
+                questionBlock.appendChild(optionsDiv);
+                container.appendChild(questionBlock);
+            });
+            
+            updateNavigationButtons();
+            updateQuestionCounter();
+        }
+        
+        // Change the current question
+        function changeQuestion(direction) {
+            // Save current answer before moving
+            const currentQuestionBlock = document.getElementById(`question-${currentQuestionIndex}`);
+            const selectedOption = currentQuestionBlock.querySelector('input[type="radio"]:checked');
+            if (selectedOption) {
+                userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
+            }
+            
+            // Hide current question
+            document.getElementById(`question-${currentQuestionIndex}`).style.display = 'none';
+            
+            // Calculate new index
+            currentQuestionIndex += direction;
+            
+            // Show new question
+            document.getElementById(`question-${currentQuestionIndex}`).style.display = 'block';
+            
+            // Update navigation buttons
+            updateNavigationButtons();
+            updateQuestionCounter();
+        }
+        
+        // Update navigation buttons based on current question
+        function updateNavigationButtons() {
+            document.getElementById('prevBtn').disabled = currentQuestionIndex === 0;
+            document.getElementById('nextBtn').disabled = currentQuestionIndex === questions.length - 1;
+            
+            // Check if all questions are answered
+            const allAnswered = userAnswers.every(answer => answer !== null);
+            document.getElementById('submitBtn').disabled = !allAnswered;
+        }
+        
+        // Update question counter
+        function updateQuestionCounter() {
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+        }
+        
+        // Calculate score and show results
+        function submitAssessment() {
+            // First validate student info
+            const studentName = document.getElementById('studentName').value;
+            const studentEmail = document.getElementById('studentEmail').value;
+            const studentId = document.getElementById('studentId').value;
+            const courseDate = document.getElementById('courseDate').value;
+            
+            if (!studentName || !studentEmail || !studentId || !courseDate) {
+                alert('Please complete all student information fields before submitting.');
+                return;
+            }
+            
+            // Calculate score
+            let score = 0;
+            for (let i = 0; i < questions.length; i++) {
+                if (userAnswers[i] === questions[i].correctAnswer) {
+                    score++;
+                }
+            }
+            
+            // Calculate percentage
+            const percentage = Math.round((score / questions.length) * 100);
+            
+            // Display results
+            document.getElementById('score').textContent = score;
+            document.getElementById('percentage').textContent = percentage;
+            
+            // Set progress bar
+            const progressFill = document.getElementById('progressFill');
+            progressFill.style.width = `${percentage}%`;
+            
+            // Performance text
+            const performanceText = document.getElementById('performanceText');
+            if (percentage >= 80) {
+                performanceText.textContent = 'Excellent! You have demonstrated strong knowledge of CNA concepts.';
+                performanceText.style.color = '#28a745';
+            } else if (percentage >= 70) {
+                performanceText.textContent = 'Good job! You have a solid understanding of most CNA concepts.';
+                performanceText.style.color = '#ffc107';
+            } else if (percentage >= 60) {
+                performanceText.textContent = 'Satisfactory. Review the areas you missed to improve your knowledge.';
+                performanceText.style.color = '#fd7e14';
+            } else {
+                performanceText.textContent = 'Needs improvement. Please review the material and retake the assessment.';
+                performanceText.style.color = '#dc3545';
+            }
+            
+            // Student info for results
+            document.getElementById('studentResultInfo').textContent = 
+                `Student: ${studentName} | ID: ${studentId} | Date: ${courseDate}`;
+            
+            // Hide questions, show results
+            document.getElementById('questionsContainer').style.display = 'none';
+            document.querySelector('.actions').style.display = 'none';
+            document.getElementById('resultsContainer').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Send results to email
+        async function sendResultsToEmail() {
+            const studentName = document.getElementById('studentName').value;
+            const studentEmail = document.getElementById('studentEmail').value;
+            const studentId = document.getElementById('studentId').value;
+            const courseDate = document.getElementById('courseDate').value;
+            const score = document.getElementById('score').textContent;
+            const percentage = document.getElementById('percentage').textContent;
+            
+            // Show loading indicator
+            document.getElementById('emailLoading').style.display = 'block';
+            document.getElementById('emailSuccess').style.display = 'none';
+            document.getElementById('emailError').style.display = 'none';
+            
+            // Prepare data for email
+            const formData = new FormData();
+            formData.append('studentName', studentName);
+            formData.append('studentEmail', studentEmail);
+            formData.append('studentId', studentId);
+            formData.append('courseDate', courseDate);
+            formData.append('score', score);
+            formData.append('percentage', percentage);
+            formData.append('totalQuestions', questions.length);
+            formData.append('timestamp', new Date().toISOString());
+            
+            // Using Formspree as an email service
+            // Note: You need to create a free account at formspree.io and replace the email below
+            try {
+                const response = await fetch('https://formspree.io/f/mnjvbzay', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                document.getElementById('emailLoading').style.display = 'none';
+                
+                if (response.ok) {
+                    document.getElementById('emailSuccess').style.display = 'block';
+                    document.getElementById('sendEmailBtn').disabled = true;
+                    document.getElementById('sendEmailBtn').textContent = 'Results Sent';
+                } else {
+                    throw new Error('Failed to send email');
+                }
+            } catch (error) {
+                document.getElementById('emailLoading').style.display = 'none';
+                document.getElementById('emailError').style.display = 'block';
+                console.error('Error sending email:', error);
+            }
+        }
+        
+        // Initialize the page when loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeQuestions();
+            
+            // Set today's date as default for course date
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('courseDate').value = today;
+            
+            // Add input listeners to enable submit button when all fields are complete
+            const formInputs = document.querySelectorAll('#studentForm input');
+            formInputs.forEach(input => {
+                input.addEventListener('input', updateNavigationButtons);
+            });
+        });
+    </script>
+</body>
+</html>
